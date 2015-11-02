@@ -10,13 +10,20 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
-    let topics = ["Mathematics", "Marvel Super Heroes", "Science"]
+    let topics = [
+        ["Subject" : "Mathematics", "Description" : "Mathematics Quiz!"],
+        ["Subject" : "Marvel Super Heroes", "Description" : "Marvel Super Heroes Quiz!"],
+        ["Subject" : "Science", "Description" : "Science Quiz!"]
+    ]
     
-    let simpleTableIdentifier = "SimpleTableIdentifier"
+    //let simpleTableIdentifier = "SimpleTableIdentifier"
+    let cellTableIdentifier = "CellTableIdentifier"
+    @IBOutlet var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        tableView.registerClass(QuizCell.self, forCellReuseIdentifier: cellTableIdentifier)
     }
 
     override func didReceiveMemoryWarning() {
@@ -25,8 +32,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     @IBAction func settingsClicked(sender: AnyObject) {
-        // make UIAlertController Pop up
-        print("I was clicked!!")
         let message = "Settings will go here!"
         let controller = UIAlertController(title: "Settings",
             message: message, preferredStyle: .Alert)
@@ -41,38 +46,27 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             return topics.count
     }
     
-    func tableView(tableView: UITableView,
-        cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-            var cell = tableView.dequeueReusableCellWithIdentifier(simpleTableIdentifier)
-                as UITableViewCell!
-            if (cell == nil) {
-                cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: simpleTableIdentifier)
-            }
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier(cellTableIdentifier, forIndexPath: indexPath)
+            as! QuizCell
+        
+        let imageView = UIImageView(frame: CGRectMake(10, 10, 10, 10))
+        let image = UIImage(named: "quiz")
+        imageView.image = image
+        cell.imageView?.image = image
+        /*
         cell!.textLabel?.text = topics[indexPath.row]
         cell!.textLabel?.font = UIFont.boldSystemFontOfSize(20)
         return cell!
+        */
+        let rowData = topics[indexPath.row]
+        cell.subject = rowData["Subject"]!
+        cell.desc = rowData["Description"]!
+        return cell
     }
-    /*
-    func tableView(tableView: UITableView,
-        indentationLevelForRowAtIndexPath
-        indexPath: NSIndexPath) -> Int {
-            return indexPath.row
-    }
-    
-    func tableView(tableView: UITableView,
-        willSelectRowAtIndexPath indexPath: NSIndexPath)
-        -> NSIndexPath? {
-            if indexPath.row == 0 {
-                return nil
-            } else if (indexPath.row % 2 == 0){
-                return NSIndexPath(forRow: indexPath.row + 1, inSection: indexPath.section)
-            } else {
-                return indexPath
-            }
-    }
-*/
+
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 70
+        return 50
     }
 
 }

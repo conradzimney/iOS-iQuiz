@@ -14,6 +14,7 @@
 		CE47255F1BE6A37F0035F750 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE47255D1BE6A37F0035F750 /* LaunchScreen.storyboard */; };
 		CE47256A1BE6A37F0035F750 /* iQuizTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4725691BE6A37F0035F750 /* iQuizTests.swift */; };
 		CE4725751BE6A37F0035F750 /* iQuizUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4725741BE6A37F0035F750 /* iQuizUITests.swift */; };
+		CE4725831BE6DB3F0035F750 /* QuizCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4725821BE6DB3F0035F750 /* QuizCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		CE4725701BE6A37F0035F750 /* iQuizUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iQuizUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE4725741BE6A37F0035F750 /* iQuizUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iQuizUITests.swift; sourceTree = "<group>"; };
 		CE4725761BE6A37F0035F750 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE4725821BE6DB3F0035F750 /* QuizCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 			children = (
 				CE4725541BE6A37F0035F750 /* AppDelegate.swift */,
 				CE4725561BE6A37F0035F750 /* ViewController.swift */,
+				CE4725821BE6DB3F0035F750 /* QuizCell.swift */,
 				CE4725581BE6A37F0035F750 /* Main.storyboard */,
 				CE47255B1BE6A37F0035F750 /* Assets.xcassets */,
 				CE47255D1BE6A37F0035F750 /* LaunchScreen.storyboard */,
@@ -259,6 +262,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE4725831BE6DB3F0035F750 /* QuizCell.swift in Sources */,
 				CE4725571BE6A37F0035F750 /* ViewController.swift in Sources */,
 				CE4725551BE6A37F0035F750 /* AppDelegate.swift in Sources */,
 			);
