@@ -16,7 +16,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         ["Subject" : "Science", "Description" : "Science Quiz!"]
     ]
     
-    //let simpleTableIdentifier = "SimpleTableIdentifier"
     let cellTableIdentifier = "CellTableIdentifier"
     @IBOutlet var tableView: UITableView!
     
@@ -49,19 +48,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(cellTableIdentifier, forIndexPath: indexPath) as! QuizCell
         
-        let imageView = UIImageView(frame: CGRectMake(10, 10, 10, 10))
+        let imageView = UIImageView(frame: CGRectMake(10, 10, 5, 5))
         let image = UIImage(named: "quiz")
         imageView.image = image
         cell.imageView?.image = image
-        /*
-        cell!.textLabel?.text = topics[indexPath.row]
-        cell!.textLabel?.font = UIFont.boldSystemFontOfSize(20)
-        return cell!
-        */
         let rowData = topics[indexPath.row]
         cell.subject = rowData["Subject"]!
         cell.desc = rowData["Description"]!
-        // cell.desc.font = UIFont.boldSystemFontOfSize(10)
         return cell
     }
 
