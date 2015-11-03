@@ -50,9 +50,11 @@ class QuizCell: UITableViewCell {
         subjectLabel = UILabel(frame: subjectValueRect)
         contentView.addSubview(subjectLabel)
         
-        let descriptionValueRect = CGRectMake(130, 25, 200, 15)
+        let descriptionValueRect = CGRectMake(130, 26, 200, 15)
         descriptionLabel = UILabel(frame: descriptionValueRect)
         contentView.addSubview(descriptionLabel)
+        
+        descriptionLabel.font = UIFont.boldSystemFontOfSize(12)
     }
     
     required init?(coder aDecoder: NSCoder) {
